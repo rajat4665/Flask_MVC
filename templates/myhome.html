@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../static/css/mycss.css">
+
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+<script type="text/javascript">
+  $(document).ready(function () {
+
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+
+  });
+  $(document).ready(function () {
+
+    $("#sidebar").mCustomScrollbar({
+         theme: "minimal"
+    });
+
+    $('#sidebarCollapse').on('click', function () {
+        // open or close navbar
+        $('#sidebar').toggleClass('active');
+        // close dropdowns
+        $('.collapse.in').toggleClass('in');
+        // and also adjust aria-expanded attributes we use for the open/closed arrows
+        // in our CSS
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+
+});
+
+
+</script>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="col-md-2 wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3 style="display:inline">Dr.Docs </h3>
+                <span><i style="font-size:3em" class="fab fa-centercode"></i></span>
+            </div>
+            <!-- <span><i class="fas fa-brain"></i></span> -->
+
+            <ul class="list-unstyled components">
+                <p>Flask text analyse API </p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">More Info</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="https://getpython.wordpress.com/about-us/">About us</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/rajat4665">Github</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://getpython.wordpress.com/contact/s">Contact</a>
+                </li>
+                <li>
+                  <a href="{{url_for('login')}}">Login</a>
+                </li>
+                <li>
+                  <a href="{{url_for('register')}}">Register</a>
+                </li>
+            </ul>
+
+        </nav>
+        <!-- Page Content -->
+        <!-- <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+        </div> -->
+    </div>
+
+
+  <div class="col-md-10">
+    <div class="">
+      <img src="../static/images/base1.jpg" class="myimage1"  alt="Not found">
+      <p class="mypara">Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions) and self-correction. Particular applications of AI include expert systems, speech recognition and machine vision.</p>
+      <br>
+    </div>
+    <div class="">
+      <img src="../static/images/base2.jpg" class="myimage2" alt="Not found">
+
+    </div>
+
+
+    </div>
+  </div>
+  </body>
+</html>
